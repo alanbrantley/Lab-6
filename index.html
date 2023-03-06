@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Add the bootstrap css file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4d55a77701.js" crossorigin="anonymous"></script>
+    
+
+
+    <title>Document</title>
+</head>
+<body>
+ 
+
+<section>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">User</a></li>
+            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-4">
+
+        <div class="card mb-4" style="width: 100%;">
+          <div class="card-body text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" Id="user-image" alt="user-image"
+              class="rounded-circle img-fluid user-image" style="width: 150px;">
+            <h5 Id="user-name" class="my-3 name">John Smith</h5>
+            <p class="text-muted mb-1">Full Stack Developer</p>
+            <p Id="address location" class="text-muted mb-4 address location">Bay Area, San Francisco, CA</p>
+            <div class="d-flex justify-content-center mb-2">
+              <button type="button" class="btn btn-primary">Follow</button>
+              <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body p-0" >
+            <ul class="list-group list-group-flush rounded-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fas fa-globe fa-lg text-warning"></i>
+                <p class="mb-0"><a href="#">https://</a><a href="#" class="social-link"></a><a href="#">.com</a></p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                <p class="mb-0"><a href="#" class="social-link">mdbootstrap</a></p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                <p class="mb-0">@<a href="#" class="social-link"></a></p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                <p class="mb-0"><a href="#" class="social-link">mdbootstrap</a></p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                <p class="mb-0"><a href="#" class="social-link">mdbootstrap</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4" style=" margin-top: 30px;">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0 name">Johnatan Smith</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0 email">example@example.com</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0 phone">(097) 234-5678</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Mobile</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0 cell">(098) 765-4321</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0 location">Bay Area, San Francisco, CA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">`
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+</body>
+
+<script>
+
+// get a random user from randomuser.me api
+fetch('https://randomuser.me/api').then(function(response) {
+  return response.json();
+  // take response and convert it to json to treat it as a data object
+}).then(function(data) {
+  //get the user data from the response
+  let user = data.results[0];
+  let userName = user.name.first + ' ' + user.name.last;
+  let userAddress = user.location.city + ', ' + user.location.state;
+
+  //set the user image
+  document.getElementById('user-image').src = user.picture.large;
+
+  //set the user name
+  document.querySelector('.name').innerHTML = userName;
+  document.querySelectorAll('.name').forEach(function(element) {
+    element.innerHTML = userName;
+  });
+
+  //set the user address
+  document.querySelector('.location').innerHTML = userAddress;
+  document.querySelectorAll('.location').forEach(function(element) {
+    element.innerHTML = userAddress;
+  });
+
+  // //set the user email
+  document.querySelector('.email').innerHTML = user.email;
+
+  // //set the user phone
+  document.querySelector('.phone').innerHTML = user.phone;
+
+  // set user cell
+  document.querySelector('.cell').innerHTML = user.cell;  
+
+  // add the social user name to social links
+  document.querySelectorAll('.social-link').forEach(function(element) {
+    element.innerHTML = user.login.username;
+  });
+});
+
+
+</script>
+</html>
